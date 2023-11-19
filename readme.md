@@ -110,6 +110,8 @@ go test -benchmem . -bench . -benchtime=10x
 
 > **Warning**
 > My computer environment is very noising, please focus on using memory (B/op and allocs/op) rather than naive process performance
+> I tried the benchmark several times and adjusted the benchtime to get more accurate results.
+> If anyone uses Linux and can update these results via PR, I'd be very grateful.
 
 Some prettier works(column name, indentation, etc.) on result
 
@@ -165,28 +167,28 @@ BenchmarkZeroCopyLibSend100MB-8   2119      666922     52056        177
 BenchmarkIoPipeSend100MB-8         163     9662024     83720        244
 BenchmarkNaiveSend100MB-8           13   166625393 335586727        162
 
-BenchmarkOsPipeSend10MB-8         1250      864626     83850        163
-BenchmarkZeroCopyLibSend10MB-8    1501     1071810     52218        177
-BenchmarkIoPipeSend10MB-8          195    10791563     83770        252
-BenchmarkNaiveSend10MB-8           110    24652351  41984802        155
+BenchmarkOsPipeSend10MB-8          600      864626     83850        163
+BenchmarkZeroCopyLibSend10MB-8    1172     1071810     52218        177
+BenchmarkIoPipeSend10MB-8          208     7945024     83770        252
+BenchmarkNaiveSend10MB-8           100    10297893  41985646        155
 
 BenchmarkOsPipeSend1MB-8          1477      826677     83876        165
 BenchmarkZeroCopyLibSend1MB-8     1671      919370     52114        177
-BenchmarkIoPipeSend1MB-8          1310     2139825     84334        178
-BenchmarkNaiveSend1MB-8            835     1213371   2663698        151
+BenchmarkIoPipeSend1MB-8          1256      808349     83521        171
+BenchmarkNaiveSend1MB-8            798     1283727   2663819        150
 
-BenchmarkOsPipeSend100KB-8        1602      767052     83690        148
-BenchmarkZeroCopyLibSend100KB-8   1508      705544     52139        177
-BenchmarkIoPipeSend100KB-8        2054      540105     83964        149
-BenchmarkNaiveSend100KB-8         2402      507276    370370        148
+BenchmarkOsPipeSend100KB-8        1183      541536     83711        148
+BenchmarkZeroCopyLibSend100KB-8   1305      449427     52169        177
+BenchmarkIoPipeSend100KB-8        1172      519949     83748        149
+BenchmarkNaiveSend100KB-8         1158      488074    370671        148
 
-BenchmarkOsPipeSend10KB-8         2557      450030     83680        145
-BenchmarkZeroCopyLibSend10KB-8    3129      444820     51382        167
-BenchmarkIoPipeSend10KB-8         2810      428353     83995        146
-BenchmarkNaiveSend10KB-8          3105     1910439     68452        146
+BenchmarkOsPipeSend10KB-8         1569      376314     83668        145
+BenchmarkZeroCopyLibSend10KB-8    1753      393795     51430        167
+BenchmarkIoPipeSend10KB-8         1620      364539     84001        146
+BenchmarkNaiveSend10KB-8          1776      389435     68548        146
 
-BenchmarkOsPipeSend1KB-8          3102      341200     83696        145
-BenchmarkZeroCopyLibSend1KB-8     3549      365182     51442        167
-BenchmarkIoPipeSend1KB-8          3411      542196     83985        146
-BenchmarkNaiveSend1KB-8            450     2593385     52038        142
+BenchmarkOsPipeSend1KB-8          1612      373308     83663        145
+BenchmarkZeroCopyLibSend1KB-8     1671      367797     51513        167
+BenchmarkIoPipeSend1KB-8          1591      349981     83819        146
+BenchmarkNaiveSend1KB-8           1687      370068     52038        142
 ```
