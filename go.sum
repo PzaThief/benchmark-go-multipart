@@ -1,0 +1,4 @@
+acln.ro/zerocopy v0.0.0-20190410132315-ac749309e897 h1:YS/zqVM+YZw1mQ5mMO9AVm3F15ugsrQi/+D+aTnfuAs=
+acln.ro/zerocopy v0.0.0-20190410132315-ac749309e897/go.mod h1:6Y/vMw2GLvT76aiMGe6xQTsL2QSBKp3xe6j+I+YE4kE=
+golang.org/x/sys v0.0.0-20190322080309-f49334f85ddc h1:4gbWbmmPFp4ySWICouJl6emP0MyS31yy9SrTlAGFT+g=
+golang.org/x/sys v0.0.0-20190322080309-f49334f85ddc/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
