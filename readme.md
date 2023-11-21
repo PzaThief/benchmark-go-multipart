@@ -7,6 +7,10 @@ If you need more speed with large files, consider using zero copy methods(os.spl
 
 Note: I excluded sendFile method of net package because it is hard to use with http package.
 
+## How it works?
+net/http's writeBody method eventually delegates to TCPConn's readFrom via persistConnWriter.
+TCPConn's readFrom will try splice and sendFile if possible. Therefore, the body passed to the http request can also be used in the same way.
+
 ## Methods
 
 1. Use os pipe
