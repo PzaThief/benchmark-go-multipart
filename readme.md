@@ -5,7 +5,7 @@ io.pipe is good, but not fast enough when dealing with large files.
 
 If you need more speed with large files, consider using zero copy methods(os.splice, os.pipe, etc.)
 
-Note: I excluded sendFile method of net package because it is hard to use with http package.
+Note: I didn't use sendFile method of net package directly because it is hard to use with http package.
 
 ## How it works?
 net/http's writeBody method eventually delegates to TCPConn's readFrom via persistConnWriter.
@@ -33,7 +33,7 @@ func osPipeSend(fileName, url string) {
 }
 ```
 
-2. Use zerocopy library
+2. Use [zerocopy library](https://github.com/acln0/zerocopy) (it uses os.pipe in case of windows)
 
 ```go
 type readCloserPipeWrap struct {
